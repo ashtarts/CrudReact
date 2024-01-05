@@ -26,7 +26,6 @@ const Create = ({algumaFuncaoFutura}) => {
   };
   return (
     <div className="create-container">
-      <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap" rel="stylesheet"></link>
       <h3 className='create-title'>Products Menu</h3>
 
       <div className="fields">

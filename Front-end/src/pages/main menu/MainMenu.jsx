@@ -5,7 +5,6 @@ import '../main menu/MainMenu.sass';
 const MainMenu = () => {
   return (
     <div className="main-menu-container">
-        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap" rel="stylesheet"></link>
         <h3 className='menu-title'>Products Menu</h3>
         <div className="buttons">
             <button className="menu-button">

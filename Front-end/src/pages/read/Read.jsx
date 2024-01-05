@@ -3,7 +3,9 @@ import '../read/Read.sass';
 
 const Read = () => {
   return (
-    <h3>Products Menu</h3>
+    <div className="read-container">
+      <h3 className='read-title'>Products Menu</h3>
+    </div>
   )
 }
 
