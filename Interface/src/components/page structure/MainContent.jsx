@@ -8,8 +8,6 @@ import Update from '../../pages/update/Update';
 import Delete from '../../pages/delete/Delete';
 import MainMenu from '../../pages/main menu/MainMenu';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { getAllProducts } from '../services/Firebase';
-
 
 const MainContent = () => {
   return (
@@ -34,7 +32,7 @@ const MainContent = () => {
             element = { 
             <>
                 <Card content = {<Read/>}/>
-                <Table content = {getAllProducts}/>
+                <Table/>
             </>}
         />
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import '../create/Create.sass';
+import * as Firebase from '../../services/CrudFirebase';
 
 const Create = () => {
   const [values, setValues] = useState({});// as chaves para represntar um objeto
@@ -12,17 +13,23 @@ const Create = () => {
       [name]: value
     })
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      // Chame a função de criação
+      const productId = await Firebase.addProduct(values);
 
-    // Simulação do envio dos dados
-    console.log(values);
-    setValues({
-      name: '',
-      code: '',
-      description: '',
-      price: ''
-    });
+      // Limpe os campos
+      setValues({
+        name: '',
+        code: '',
+        description: '',
+        price: ''
+      });
+
+    } catch (error) {
+      console.error('Erro ao adicionar produto:', error);
+    }
   };
   return (
     <div className="create-container">
@@ -32,7 +39,7 @@ const Create = () => {
 
         <form onSubmit={handleSubmit}>
           <div className='create-field'>
-            <label className="field-description">Nome do produto:</label>
+            <label className="field-description">Product name:</label>
             <input className = "field" type="text" 
             required
             name='name'
@@ -42,7 +49,7 @@ const Create = () => {
           </div>
 
           <div className='create-field'>
-            <label className="field-description">Código do produto:</label>
+            <label className="field-description">Product code:</label>
             <input className = "field" type="text" 
             required
             name='code'
@@ -52,7 +59,7 @@ const Create = () => {
           </div>
 
           <div className='create-field'>
-            <label className="field-description">Descrição do produto:</label>
+            <label className="field-description">Product description:</label>
             <input className = "field" type="text"
             required
             name='description'
@@ -62,7 +69,7 @@ const Create = () => {
           </div>
 
           <div className='create-field'>
-            <label className="field-description">Preço do produto:</label>
+            <label className="field-description">Product price:</label>
             <input className = "field" type="text"
             required
             name='price'

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../update/Update.sass';
 import { useState } from 'react';
+import * as Firebase from '../../services/CrudFirebase';
 
 const Update = () => {
   const [values, setValues] = useState({});// as chaves para representar um objeto
@@ -12,20 +13,32 @@ const Update = () => {
       [name]: value
     })
   };
-  const handleSubmit = (e) => {
-    // aqui enviar pro backend para apagar
-    e.preventDefault()
-    console.log(values);
-    setValues({
-      code: ''
-    });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // Pega dados
+      const products = await Firebase.getAllProducts();
+    
+      // Encontra o ID do produto com base no código
+      const productToUpdate = products.find(product => product.code === values.code);
+
+      // Chama a função de atualização
+      const productId = await Firebase.updateProduct(productToUpdate, INSERIR VALORES NOVOS AQUI);
+
+      // Limpa os valores após a atualização bem-sucedida
+      setValues({
+        code: ''
+      });
+    } catch (error) {
+      console.error('Erro ao excluir produto:', error);
+    }
   };
 return (
   <div className="update-container">
     <h3 className='update-title'>Products Menu</h3>
     <form onSubmit={handleSubmit}>
       <div className='update-field'>
-        <label className="field-description">Insira o código do produto:</label>
+        <label className="field-description">Insert product code:</label>
           <input className = "field" type="text"
             required
             name='code'

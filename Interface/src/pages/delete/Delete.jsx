@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import '../delete/Delete.sass';
+import * as Firebase from '../../services/CrudFirebase';
 
 const Delete = () => {
     const [values, setValues] = useState({});// as chaves para representar um objeto
@@ -8,24 +9,35 @@ const Delete = () => {
     const handleValues = (e) => {
       const { name, value } = e.target;
       setValues({
-        ...values,
         [name]: value
       })
     };
-    const handleSubmit = (e) => {
-      // aqui enviar pro backend para apagar
-      e.preventDefault()
-      console.log(values);
-      setValues({
-        code: ''
-      });
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        // Pega dados
+        const products = await Firebase.getAllProducts();
+      
+        // Encontra o ID do produto com base no código
+        const productToDelete = products.find(product => product.code === values.code);
+
+        // Chama a função de exclusão
+        const productId = await Firebase.deleteProduct(productToDelete.id);
+  
+        // Limpa os valores após a exclusão bem-sucedida
+        setValues({
+          code: ''
+        });
+      } catch (error) {
+        console.error('Erro ao excluir produto:', error);
+      }
     };
   return (
     <div className="delete-container">
       <h3 className='delete-title'>Products Menu</h3>
       <form onSubmit={handleSubmit}>
         <div className='delete-field'>
-          <label className="field-description">Insira o código do produto:</label>
+          <label className="field-description">Insert product code:</label>
             <input className = "field" type="text"
               required
               name='code'

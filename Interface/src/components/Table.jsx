@@ -1,8 +1,9 @@
 import React from 'react'
 import '../styles/Table.sass';
 import { useState, useEffect } from 'react';
+import * as Firebase from '../services/CrudFirebase';
 
-const Table = ({getAllProducts}) => {
+const Table = () => {
 
   // Estado para armazenar dados 
   const [products, setProducts] = useState([]);
@@ -11,8 +12,9 @@ const Table = ({getAllProducts}) => {
     const displayProducts = async () => {
       try {
         // Obter a lista de produtos
-        const productsData = await getAllProducts();
+        const productsData = await Firebase.getAllProducts();
         setProducts(productsData);
+        
       } catch (error) {
         console.error('Erro ao exibir produtos:', error);
       }
@@ -37,4 +39,4 @@ const Table = ({getAllProducts}) => {
   )
 }
 
-export default Table
+export default Table;
