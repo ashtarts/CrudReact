@@ -25,7 +25,7 @@ const Delete = () => {
       <h3 className='delete-title'>Products Menu</h3>
       <form onSubmit={handleSubmit}>
         <div className='delete-field'>
-          <label className="field-description">Insira o código do produto:</label>
+          <label className="field-description">Insert product code:</label>
             <input className = "field" type="text"
               required
               name='code'

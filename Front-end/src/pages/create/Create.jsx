@@ -32,7 +32,7 @@ const Create = ({algumaFuncaoFutura}) => {
 
         <form onSubmit={handleSubmit}>
           <div className='create-field'>
-            <label className="field-description">Nome do produto:</label>
+            <label className="field-description">Product name:</label>
             <input className = "field" type="text" 
             required
             name='name'
@@ -42,7 +42,7 @@ const Create = ({algumaFuncaoFutura}) => {
           </div>
 
           <div className='create-field'>
-            <label className="field-description">Código do produto:</label>
+            <label className="field-description">Product code:</label>
             <input className = "field" type="text" 
             required
             name='code'
@@ -52,7 +52,7 @@ const Create = ({algumaFuncaoFutura}) => {
           </div>
 
           <div className='create-field'>
-            <label className="field-description">Descrição do produto:</label>
+            <label className="field-description">Product description:</label>
             <input className = "field" type="text"
             required
             name='description'
@@ -62,7 +62,7 @@ const Create = ({algumaFuncaoFutura}) => {
           </div>
 
           <div className='create-field'>
-            <label className="field-description">Preço do produto:</label>
+            <label className="field-description">Product price:</label>
             <input className = "field" type="text"
             required
             name='price'

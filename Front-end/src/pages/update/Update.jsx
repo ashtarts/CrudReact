@@ -25,7 +25,7 @@ return (
     <h3 className='update-title'>Products Menu</h3>
     <form onSubmit={handleSubmit}>
       <div className='update-field'>
-        <label className="field-description">Insira o código do produto:</label>
+        <label className="field-description">Insert product code:</label>
           <input className = "field" type="text"
             required
             name='code'
