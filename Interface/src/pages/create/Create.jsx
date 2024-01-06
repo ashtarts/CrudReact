@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import '../create/Create.sass';
 
-const Create = ({algumaFuncaoFutura}) => {
+const Create = () => {
   const [values, setValues] = useState({});// as chaves para represntar um objeto
 
   const handleValues = (e) => {
