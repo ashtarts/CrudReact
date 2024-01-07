@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import ViteFirebasePlugin from 'vite-plugin-firebase';
+import firebaseConfig from './firebaseConfig';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,4 +14,7 @@ export default defineConfig({
       external: ['firebase/firestore'],
     },
   },
+  plugins: [
+    ViteFirebasePlugin(firebaseConfig),
+  ],
 })
