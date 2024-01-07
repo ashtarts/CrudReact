@@ -31,8 +31,14 @@ const MainContent = () => {
             path = "/Read" 
             element = { 
             <>
-                <Card content = {<Read/>}/>
-                <Table/>
+                <div className="read-containers">
+                  <div className="card-read">
+                    <Card content = {<Read/>}/>
+                  </div>
+                  <div className="card-table">
+                    <Table/>
+                  </div>
+                </div>
             </>}
         />
 
