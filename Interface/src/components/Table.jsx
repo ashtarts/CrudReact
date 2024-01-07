@@ -27,6 +27,7 @@ const Table = () => {
 
   return (
     <table>
+      <tbody>
       {products?.map((product, index) => ( // a interrogação garante que não é exibido se 'itens' for undefined
         <tr key = {index}>
           <td>{product.code}</td>
@@ -35,6 +36,7 @@ const Table = () => {
           <td>{product.price}</td>
         </tr>
       ))}
+      </tbody>
     </table>
   )
 }

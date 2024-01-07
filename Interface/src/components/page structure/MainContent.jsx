@@ -47,7 +47,6 @@ const MainContent = () => {
             path = "/Delete" 
             element = { <Card content = {<Delete/>}/>}
         />
-
     
         </Routes>
       </main>

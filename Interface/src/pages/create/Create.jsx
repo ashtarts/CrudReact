@@ -16,10 +16,10 @@ const Create = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Chame a função de criação
+      // Chama a função de criação
       const productId = await Firebase.addProduct(values);
 
-      // Limpe os campos
+      // Limpa os campos
       setValues({
         name: '',
         code: '',
