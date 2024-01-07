@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
     exclude: ['firebase'], 
+    include: ['firebase/app', 'firebase/firestore']
   },
   build: {
     rollupOptions: {
