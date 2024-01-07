@@ -14,8 +14,7 @@
 ![Captura de tela 2024-01-07 192343](https://github.com/marcelopetroni/CrudReact/assets/105806830/52484191-78b5-4bc1-b64d-1efa7141bd26)
 
 - Acesse meu projeto pelo link: Adicionar link aqui
-- O projeto foi feito utilizando React.js - Vite, Sass e Firebase para o back-end, é um site com propósito de realizar solicitações CRUD:
-- Create (adicionar dados), Read (ler dados), Update (atualizar dados), Delete (deletar dados)
+- O projeto foi feito utilizando React.js - Vite, Sass e Firebase para o back-end, é um site com propósito de realizar solicitações CRUD: Create (adicionar dados), Read (ler dados), Update (atualizar dados), Delete (deletar dados)
 
 ### Built With
 
