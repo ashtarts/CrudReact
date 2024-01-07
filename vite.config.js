@@ -7,4 +7,9 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['firebase'], 
   },
+  build: {
+    rollupOptions: {
+      external: ['firebase/firestore'],
+    },
+  },
 })
