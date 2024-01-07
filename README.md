@@ -1,4 +1,4 @@
-<h1 align="center">Projeto CRUD React + Vitet</h1>
+<h1 align="center">CRUD React + Vite</h1>
 
 <div align="center">
   <h3> 
