@@ -13,7 +13,7 @@ const MainContent = () => {
   return (
     <Router>
       <main>
-        <Routes>
+        <Routes >
           {/* Main Menu */}
         <Route 
             path = "/" 
@@ -43,7 +43,7 @@ const MainContent = () => {
         />
 
           {/* Update */}
-        <Route 
+        <Route className = "teste"
             path = "/Update" 
             element = { <Card content = {<Update/>}/>}
         />

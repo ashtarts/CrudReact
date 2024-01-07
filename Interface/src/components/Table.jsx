@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import * as Firebase from '../services/CrudFirebase';
 
 const Table = () => {
+  const [doneLoading, setDoneLoading] = useState(false);
+  
 
   // Estado para armazenar dados 
   const [products, setProducts] = useState([]);
@@ -14,6 +16,7 @@ const Table = () => {
         // Obter a lista de produtos
         const productsData = await Firebase.getAllProducts();
         setProducts(productsData);
+        setDoneLoading(true);
         
       } catch (error) {
         console.error('Erro ao exibir produtos:', error);
@@ -27,6 +30,16 @@ const Table = () => {
 
   return (
     <table>
+      { doneLoading ? 
+      (<thead>
+        <tr className='table-column'>
+          <td>Code</td>
+          <td>Name</td>
+          <td>Description</td>
+          <td>Price</td>
+        </tr>
+      </thead>)
+      : null}
       <tbody>
       {products?.map((product, index) => ( // a interrogação garante que não é exibido se 'itens' for undefined
         <tr key = {index}>

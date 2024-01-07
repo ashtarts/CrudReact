@@ -2,6 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import '../create/Create.sass';
 import * as Firebase from '../../services/CrudFirebase';
+import { Link } from 'react-router-dom';
+import { IoCaretBackCircle } from "react-icons/io5";
 
 const Create = () => {
   const [values, setValues] = useState({});// as chaves para represntar um objeto
@@ -15,6 +17,11 @@ const Create = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!values.name || !values.code || !values.description || !values.price) {
+      alert('Por favor, preencha todos os campos.');
+      return;
+    }
     try {
       // Chama a função de criação
       const productId = await Firebase.addProduct(values);
@@ -26,6 +33,7 @@ const Create = () => {
         description: '',
         price: ''
       });
+      alert('Envio com sucesso.');
 
     } catch (error) {
       console.error('Erro ao adicionar produto:', error);
@@ -33,7 +41,10 @@ const Create = () => {
   };
   return (
     <div className="create-container">
-      <h3 className='create-title'>Products Menu</h3>
+      <div className="title-container">
+        <Link to = '/' > <IoCaretBackCircle className='back-button'/> </Link>
+        <h3 className='create-title'>Products Menu</h3>
+      </div>
 
       <div className="fields">
 

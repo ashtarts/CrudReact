@@ -3,6 +3,8 @@ import '../update/Update.sass';
 import { useState } from 'react';
 import '../create/Create.sass';
 import * as Firebase from '../../services/CrudFirebase';
+import { Link } from 'react-router-dom';
+import { IoCaretBackCircle } from "react-icons/io5";
 
 const Update = () => {
   const [productCode, setProductCode] = useState(); // Estado para armazenar código que identificará o produto a ser atualizado
@@ -13,13 +15,19 @@ const Update = () => {
   
   const handleCode = (e) => {
     e.preventDefault();
+
+    if (!productCode) {
+      alert('Por favor, preencha o código do item a ser atualizado.');
+      return;
+    }
+
     console.log(productCode);
     setExibirforms(false);
   }
 
   const handleValues = (e) => {
     const { name, value } = e.target;
-    
+
     setValues(prevValues => ({
       ...prevValues,
       [name]: value
@@ -28,6 +36,11 @@ const Update = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!values.name || !values.code || !values.description || !values.price) {
+      alert('Por favor, preencha todos os campos.');
+      return;
+    }
     try {
         // Pega dados
         const products = await Firebase.getAllProducts();
@@ -50,6 +63,7 @@ const Update = () => {
           description: '',
           price: ''
         });
+        alert('Atualizado com sucesso.');
 
     } catch (error) {
         console.error('Erro ao atualizar produto:', error);
@@ -58,7 +72,11 @@ const Update = () => {
 
 return (
   <div className="update-container">
-    <h3 className='update-title'>Products Menu</h3>
+    <div className="title-container">
+        <Link to = '/' > <IoCaretBackCircle className='back-button'/> </Link>
+        <h3 className='update-title'>Products Menu</h3>
+    </div>
+
     { exibirForms ? (
         <form onSubmit={handleCode}>
         <div className='update-field'>
