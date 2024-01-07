@@ -32,7 +32,7 @@ const Table = () => {
     <table>
       { doneLoading ? 
       (<thead>
-        <tr className='table-column'>
+        <tr className='table-options'>
           <td>Code</td>
           <td>Name</td>
           <td>Description</td>
@@ -43,10 +43,18 @@ const Table = () => {
       <tbody>
       {products?.map((product, index) => ( // a interrogação garante que não é exibido se 'itens' for undefined
         <tr key = {index}>
-          <td>{product.code}</td>
-          <td>{product.name}</td>
-          <td>{product.description}</td>
-          <td>{product.price}</td>
+          <td>
+            <div className="td-content">{product.code}</div>
+          </td>
+          <td>
+            <div className="td-content">{product.name}</div>
+          </td>
+          <td>
+            <div className='td-content'>{product.description}</div>
+          </td>
+          <td>
+            <div className="td-content">{product.price}</div>
+            </td>
         </tr>
       ))}
       </tbody>
