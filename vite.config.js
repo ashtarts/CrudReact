@@ -14,7 +14,4 @@ export default defineConfig({
       external: ['firebase/firestore'],
     },
   },
-  plugins: [
-    ViteFirebasePlugin(firebaseConfig),
-  ],
 })
