@@ -5,7 +5,12 @@ import firebaseConfig from './firebaseConfig';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    ViteFirebasePlugin({
+      // Configurações do Firebase aqui (se necessário)
+    }),
+  ],
   optimizeDeps: {
     exclude: ['firebase'], 
     include: ['firebase/app', 'firebase/firestore']
