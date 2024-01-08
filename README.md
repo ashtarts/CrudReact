@@ -1,8 +1,32 @@
-# React + Vite
+<h1 align="center">CRUD React + Vite</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+  <h3> 
+    <a href="https://to-do-list-react-bb8y.vercel.app/">
+      Acesse o site aqui
+    </a>
+  </h3>
+</div>
 
-Currently, two official plugins are available:
+<!-- OVERVIEW -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
+![Captura de tela 2024-01-07 192343](https://github.com/marcelopetroni/CrudReact/assets/105806830/52484191-78b5-4bc1-b64d-1efa7141bd26)
+
+- Acesse meu projeto pelo link: Adicionar link aqui
+- O projeto foi feito utilizando React.js - Vite, Sass e Firebase para o back-end, é um site com propósito de realizar solicitações CRUD: Create (adicionar dados), Read (ler dados), Update (atualizar dados), Delete (deletar dados)
+
+### Built With
+
+<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [Sass](https://sass-lang.com/documentation/)
+- [Firebase](https://firebase.google.com/?hl=pt)
+
+## Contact
+
+- GitHub [@marcelopetroni](https://github.com/marcelopetroni) 
+- Linkedin [Marcelo Nunes](https://www.linkedin.com/in/marcelo-nunes-a8b7a223a/)
+- Gmail [marceloapetroni@gmail.com](mailto:marceloapetroni@gmail.com)
