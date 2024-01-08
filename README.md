@@ -2,7 +2,7 @@
 
 <div align="center">
   <h3> 
-    <a href="https://crud-react-eight-pink.vercel.app/">
+    <a target="_blank" href="https://crud-react-eight-pink.vercel.app/">
       Acesse o site aqui
     </a>
   </h3>
