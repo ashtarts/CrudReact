@@ -2,7 +2,7 @@
 
 <div align="center">
   <h3> 
-    <a target="_blank" href="https://crud-react-eight-pink.vercel.app/">
+    <a href="https://crud-react-eight-pink.vercel.app/">
       Acesse o site aqui
     </a>
   </h3>
@@ -20,7 +20,7 @@
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
-- [React](https://reactjs.org/){:target="_blank"}
+- [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
 - [Sass](https://sass-lang.com/documentation/)
 - [Firebase](https://firebase.google.com/?hl=pt)
